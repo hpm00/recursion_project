@@ -10,7 +10,7 @@ def merge_sort(arr)
   sorted = []
   # compare first elements in both side and add 'lower' first element to sorted
   # 'lower' first element is then deleted from corresponding array
-  while left != [] && right != [] do
+  while !left.empty? && !right.empty? do
     if left[0] < right[0]
       sorted << left[0]
       left.delete_at(0)
@@ -20,12 +20,12 @@ def merge_sort(arr)
     end
   end 
   # what to do when one array is empty but not the other 
-  while left != [] do
+  while !left.empty? do
     sorted << left[0]
     left.delete_at(0)
   end
   
-  while right != [] do
+  while !right.empty? do
     sorted << right[0]
     right.delete_at(0)
   end
